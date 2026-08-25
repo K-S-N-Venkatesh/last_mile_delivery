@@ -5,10 +5,18 @@ const cors = require("cors");
 
 const app = express();
 const authRoutes = require("./routes/authRoutes");
+const zoneRoutes = require("./routes/zoneRoutes");
+const areaRoutes = require("./routes/areaRoutes");
+const rateCardRoutes = require("./routes/rateCardRoutes");
+const codRoutes = require("./routes/codRoutes");
 
 app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
+app.use("/api/zones", zoneRoutes);
+app.use("/api/areas", areaRoutes);
+app.use("/api/rate-cards", rateCardRoutes);
+app.use("/api/cod-rates", codRoutes);
 
 app.get("/", (req, res) => {
     res.json({
